@@ -14,7 +14,8 @@ body {
   position: relative;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%); }
+  transform: translate(-50%, -50);
+  animation: rotate 1x linear infinite; }
 
 #mercurio {
   width: 50px;
