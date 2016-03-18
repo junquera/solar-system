@@ -1,0 +1,39 @@
+body {
+  background: black; }
+
+#sol {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: yellow;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: rotate;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); }
+
+#mercurio {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: grey;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: rotate;
+  transform: rotate 1s linear infinite; }
+
+@keyframes rotate {
+  0%, 100% {
+    transform: rotate(0deg); }
+  33% {
+    transform: rotate(15deg); }
+  66% {
+    transform: rotate(-15deg); } }
+
+/*# sourceMappingURL=style.css.map */
