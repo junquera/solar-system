@@ -7,30 +7,24 @@ body{
     height: $dim;
     border-radius: 50%;
     background: $color;
-    position: relative;
+    position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    animation: rotate
+    animation: rotate 5s linear infinite;
 }
 
 #sol{
     @include astro(50px, yellow);
-    position: relative;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50);
-    animation: rotate 1x lineacr infinite;
+    animation: none;
 }
 
 #mercurio{
-    @include astro(50px, grey);
-    transform: rotate 1s linear infinite;
-    animation: rotate 1x lineacr infinite;
-}
+    @include astro(30px, gray);
+    }
 
+// TODO How to add parameters to @keyframes (@mixin @keyframes?)
 @keyframes rotate {
-    0%, 100% {transform: rotate(0deg);}
-    33% {transform: rotate(15deg);}
-    66% {transform: rotate(-15deg);}
+    0%  { transform: rotate(0deg) translateX(150px) rotate(0deg); }
+    100% { transform: rotate(360deg) translateX(150px) rotate(-360deg); }
 }
