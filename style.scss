@@ -2,7 +2,16 @@ body{
     background: black;
 }
 
-@mixin astro($dim, $color){
+@mixin rotate ($radius, $period){
+    @keyframes rotate{
+        0%  { transform: rotate(0deg) translateX($radius) rotate(0deg); }
+        100% { transform: rotate(360deg) translateX($radius) rotate(-360deg); }
+    }
+
+    animation: rotate $period linear infinite;
+}
+
+@mixin astro($dim, $radius, $period, $color){
     width: $dim;
     height: $dim;
     border-radius: 50%;
@@ -11,20 +20,15 @@ body{
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    animation: rotate 5s linear infinite;
+    @include rotate($radius, $period)
 }
 
 #sol{
-    @include astro(50px, yellow);
-    animation: none;
+    @include astro(50px, 0, 0, yellow);
 }
 
 #mercurio{
-    @include astro(30px, gray);
+    @include astro(30px, 150px, 10s, gray);
     }
 
 // TODO How to add parameters to @keyframes (@mixin @keyframes?)
-@keyframes rotate {
-    0%  { transform: rotate(0deg) translateX(150px) rotate(0deg); }
-    100% { transform: rotate(360deg) translateX(150px) rotate(-360deg); }
-}
